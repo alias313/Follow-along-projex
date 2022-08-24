@@ -1,0 +1,4 @@
+After activating your environment in your terminal execute the following command:
+pip install -r requirements.txt
+
+REMEMBER to do this inside the folder where requirements.txt is located.
