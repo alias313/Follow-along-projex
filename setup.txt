@@ -2,3 +2,9 @@ After activating your environment in your terminal execute the following command
 pip install -r requirements.txt
 
 REMEMBER to do this inside the folder where requirements.txt is located.
+
+If you are running these programs from the terminal execute them from the correct folder (Multi-Clipboard, Weather_Fetcher...)
+
+Also, you must input your own API key from openweather in the Weather_Fetcher project.
+Add a .json file named "api.json" and input a key named "key" and store the API key provided by OpenWeather inside.
+DO NOT share this API key with anyone

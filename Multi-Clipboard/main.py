@@ -6,18 +6,18 @@ import clipboard
 
 SAVED_DATA = "clipboard.json"
 
-def save_data(filepath, data):
+def save_data(filepath, copied_data):
     """Saves data on specified filepath"""
     with open(filepath, "w", encoding="utf-8") as file:
-        json.dump(data, file)
+        json.dump(copied_data, file)
 
 
 def load_data(filepath):
     """Loads filepath"""
     try:
         with open(filepath, "r", encoding="utf-8") as file:
-            data = json.load(file)
-            return data
+            saved_data = json.load(file)
+            return saved_data
     except OSError:
         return {}
 

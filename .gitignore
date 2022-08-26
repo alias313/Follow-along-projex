@@ -2,3 +2,5 @@ MC_env
 WF_env
 .vscode
 clipboard.json
+settings.json
+api.json
