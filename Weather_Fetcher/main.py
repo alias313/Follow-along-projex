@@ -1,6 +1,5 @@
 """Fetches weather data from OpenWeather's API"""
 
-from doctest import ELLIPSIS_MARKER
 import json
 import requests
 
@@ -12,13 +11,16 @@ with open("api.json", "r", encoding="utf-8") as f:
 
 key = saved_key["key"]
 
-city = input("Enter a city name")
+city = input("Enter a city name: ")
 
-request_url = f"{BASE_URL}?appid={key}&q={city}"
+request_url = f"{BASE_URL}?appid={key}&q={city}&units=metric"
 response = requests.get(request_url)
 
 if response.status_code == 200:
     data = response.json()
-    print(data)
+    weather = data["weather"][0]["description"]
+    print("Weather:", weather)
+    temperature = round(data["main"]["temp"], 2)
+    print("Temperature:", temperature, "C")
 else:
     print("An error ocurred.")
