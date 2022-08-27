@@ -13,6 +13,7 @@ key = saved_key["key"]
 
 city = input("Enter a city name: ")
 
+#request_url = f"{BASE_URL}?appid={key}&q={city}&units=metric"
 request_url = f"{BASE_URL}?appid={key}&q={city}&units=metric"
 response = requests.get(request_url)
 
@@ -22,5 +23,11 @@ if response.status_code == 200:
     print("Weather:", weather)
     temperature = round(data["main"]["temp"], 2)
     print("Temperature:", temperature, "C")
+    humidity = data["main"]["humidity"]
+    print("Humidity:", humidity, "%")
+    wind_speed = data["wind"]["speed"]
+    print("Wind speed:", wind_speed, "m/s")
+    timezone = data["timezone"]
+    print("Timezone:", timezone//3600-2, "h from Spain")
 else:
     print("An error ocurred.")
