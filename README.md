@@ -1,5 +1,5 @@
 # Follow-along-projex
-This repository will contain the projects that I've followed a tutorial for in hope of learning more about a specific programming language.
+This repository will contain the projects that I've followed a tutorial for in hope of learning more about a specific programming language or technology.
 
 ## For the python projects:
 After activating your virtual environment in your terminal execute the following command:
