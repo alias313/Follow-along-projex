@@ -1,5 +1,5 @@
 """
-URL configuration for books project.
+URL configuration for Django_Rest_Framework_Books_Project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
