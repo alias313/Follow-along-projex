@@ -36,3 +36,9 @@ class TodoView(APIView):
                 'message': 'Todo is created',
                 'data': serializer.data
             })
+        except Exception as e:
+            return Response({
+                'status': False,
+                'message': 'something went wrong',
+                'data': {}
+            })
