@@ -1,7 +1,7 @@
 # Follow-along-projex
 This repository will contain the projects that I've followed a tutorial for in hope of learning more about a specific programming language or technology.
 
-## For the python projects:
+## For the python/django projects
 After activating your virtual environment in your terminal execute the following command:
 ```
 pip install -r requirements.txt
