@@ -3,3 +3,4 @@ venv
 clipboard.json
 settings.json
 api.json
+node_modules
