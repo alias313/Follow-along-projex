@@ -17,6 +17,14 @@ app.post('/api/files', async (req, res) => {
     return res.status(200).json({ data: [], message: 'File uploaded successfully' })
 })
 
+app.get('/api/users', async (req, res) => {
+    // 1. Extract query param ?q= from req
+    // 2. Validate query param exists
+    // 3. Filter data with query param
+    // 4. Return 200 with query param
+    return res.status(200).json({ data: [] })
+})
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
 })
