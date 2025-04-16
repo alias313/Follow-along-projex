@@ -1,6 +1,4 @@
-"use client";
-
-import TabWrapper from "./tabs";
+import TabWrapper from "../tabs";
 
 function TabContents({ tab }: {tab: "a" | "b" | "c" }) {
   console.log("RENDERING TAB COMPONENTS FOR", tab);
