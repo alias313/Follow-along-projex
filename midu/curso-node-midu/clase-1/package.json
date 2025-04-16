@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/alias313/Follow-along-projex#readme",
   "dependencies": {
-    "picocolors": "^1.0.0"
+    "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "standard": "^17.1.0"
+    "standard": "^17.1.2"
   },
   "eslintConfig": {
     "extends": "standard"
