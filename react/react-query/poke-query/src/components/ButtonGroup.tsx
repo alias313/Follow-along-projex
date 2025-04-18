@@ -19,7 +19,7 @@ export default function ButtonGroup({ handleSetId }: ButtonGroupProps) {
     <div className="flex justify-center space-x-4 mb-8">
       <button
         onClick={handlePrevious}
-        className="w-12 h-12 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center border border-gray-400"
+        className="w-12 h-12 text-black rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center border border-gray-400"
         aria-label="Previous Pokemon"
       >
         <span className="text-2xl">&larr;</span>
@@ -27,7 +27,7 @@ export default function ButtonGroup({ handleSetId }: ButtonGroupProps) {
       
       <button
         onClick={handleNext}
-        className="w-12 h-12 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center border border-gray-400"
+        className="w-12 h-12 text-black rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center border border-gray-400"
         aria-label="Next Pokemon"
       >
         <span className="text-2xl">&rarr;</span>
