@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
-import PokemonCard from "./PokemonCard";
-import ButtonGroup from "./ButtonGroup";
+import PokemonCard from "@/components/PokemonCard";
+import ButtonGroup from "@/components/ButtonGroup";
 
 export default function Home() {
 	const [id, setId] = React.useState(1);
