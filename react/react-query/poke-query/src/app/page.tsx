@@ -8,6 +8,7 @@ export default function Home() {
 	const [pokemon, setPokemon] = React.useState(null);
 	const [isLoading, setIsLoading] = React.useState(true)
 	const [error, setError] = React.useState(null);
+  const forceSkipRef = React.useRef(0);
 	
 	React.useEffect(() => {
 		let ignore = false;
@@ -19,7 +20,13 @@ export default function Home() {
 			
 			try {
 				const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-				if (ignore) {
+        
+        if (forceSkipRef.current % 5 == 0) {
+          console.log("Waiting for 0.5 seconds");
+          await new Promise(resolve => setTimeout(resolve, 500));
+        }
+        
+        if (ignore) {
           console.log(`Ignored ${id}`);
           return;
         }
@@ -39,7 +46,8 @@ export default function Home() {
 		}
 		
 		handleFetchPokemon();
-		
+    forceSkipRef.current++;
+
 		return () => { ignore = true; };
 	}, [id]);
 	
