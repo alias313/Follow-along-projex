@@ -25,13 +25,13 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
 
 export function useQuery(url: string) {
     const [state, setState] = React.useContext(queryContext);
+    const forceSkipRef = React.useRef(0);
+    
 
     React.useEffect(() => {
         const update = (newState: Partial<QueryState[keyof QueryState]>) => setState((prevState) => ({
             ...prevState, [url]: { ...prevState[url], ...newState }
         }));
-        
-        let ignore = false;
         
         const handleFetch = async () => {
             update({ data: null, isLoading: true, error: null });
@@ -39,8 +39,9 @@ export function useQuery(url: string) {
             try {
                 const res = await fetch(url);
 
-                if (ignore) {
-                    return;
+                if (forceSkipRef.current % 5 == 0) {
+                    console.log("Waiting for 0.5 seconds");
+                    await new Promise(resolve => setTimeout(resolve, 500));
                 }
                 
                 if (res.ok === false) {
@@ -49,12 +50,14 @@ export function useQuery(url: string) {
                 
                 const data = await res.json();
 
+                console.log(`fetched ${url}`);
                 update({ data, isLoading: false, error: null });
             } catch (e: Error | any) {
                 update({ error: e.message, isLoading: false, data: null });
             }
         };
         handleFetch();
+        forceSkipRef.current++;
     }, [url]);
     return state[url] || { data: null, isLoading: true, error: null };
 }
