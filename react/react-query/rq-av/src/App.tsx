@@ -17,9 +17,7 @@ export const useAVDevices = () => {
   return useQuery({
     queryKey: ['devices'],
     queryFn: getAVDevices,
-    
-    
-  })
+  });
 }
 
 function DeviceList() {
